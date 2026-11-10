@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Event Registration</h2>
+
+<form onsubmit="return validate()">
+
+Name:
+<input type="text" id="name" required><br><br>
+
+Email:
+<input type="email" id="email" required><br><br>
+
+Password:
+<input type="password" id="password" required><br><br>
+
+Phone Number:
+<input type="tel" id="phone" required><br><br>
+
+Event:
+<select id="event" required>
+<option value="">Select Event</option>
+<option>Workshop</option>
+<option>Seminar</option>
+<option>Conference</option>
+</select><br><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+<script>
+function validate() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Invalid Email");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must have at least 6 characters");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return false;
+}
+</script>
+
+</body>
+</html>
